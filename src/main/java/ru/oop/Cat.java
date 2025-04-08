@@ -6,8 +6,8 @@ public class Cat {
     private String nickName;
 
     public void show() {
-        System.out.println(this.food);
-        System.out.println(this.nickName);
+        System.out.println("Имя кошки: " + this.nickName);
+        System.out.println("Еда: " + this.food);
     }
 
     public void giveNick(String nick) {
@@ -19,16 +19,22 @@ public class Cat {
     }
 
     public static void main(String[] args) {
-        System.out.println("There are gav's food.");
+        System.out.println("Информация о кошке Gav:");
         Cat gav = new Cat();
+        gav.giveNick("Gav");
         gav.eat("kotleta");
         gav.show();
-        System.out.println("There are black's food.");
+
+        System.out.println("Информация о кошке Black:");
         Cat black = new Cat();
+        black.giveNick("Black");
         black.eat("fish");
         black.show();
+
+        System.out.println("Информация о кошке Nick:");
         Cat name = new Cat();
-        name.giveNick("nick");
+        name.giveNick("Nick");
+        name.eat("Жидкий корм");
         name.show();
     }
 }
