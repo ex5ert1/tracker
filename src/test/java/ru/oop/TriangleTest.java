@@ -18,13 +18,13 @@ public class TriangleTest {
     }
 
     @Test
-    public void testNonExistentTriangle() {
+    public void when00and11and22ThenNegativeOne() {
         Point a = new Point(0, 0);
         Point b = new Point(1, 1);
-        Point c = new Point(2, 2); // Точки лежат на одной прямой
+        Point c = new Point(2, 2);
         Triangle triangle = new Triangle(a, b, c);
-        double area = triangle.area();
-
-        assertEquals(-1, area, 0.0001);
+        double rsl = triangle.area();
+        double expected = -1;
+        assertThat(rsl).isCloseTo(expected, offset(0.001));
     }
 }
