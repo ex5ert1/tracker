@@ -3,9 +3,11 @@ package ru.inheritance;
 public class JSONReport extends TextReport {
     @Override
     public String generate(String name, String body) {
-        return "{" + System.lineSeparator() +
-                "\t\"name\" : \"" + name + "\"," + System.lineSeparator() +
-                "\t\"body\" : \"" + body + "\"" + System.lineSeparator() +
+        String lineSeparator = System.lineSeparator();
+
+        return "{" + lineSeparator +
+                "\t\"name\" : \"" + name + "\"," + lineSeparator +
+                "\t\"body\" : \"" + body + "\"" + lineSeparator +
                 "}";
     }
 }
