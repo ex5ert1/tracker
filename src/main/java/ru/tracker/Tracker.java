@@ -1,5 +1,7 @@
 package ru.tracker;
 
+import java.util.Arrays;
+
 public class Tracker {
     private final Item[] items = new Item[100];
     private int ids = 1;
@@ -24,14 +26,15 @@ public class Tracker {
     }
 
     public Item[] findAll() {
+        Item[] temp = new Item[size];
         Item[] result = new Item[size];
-        int index = 0;
-        for (int i = 0; i < items.length; i++) {
+        for (int i = 0; i < size; i++) {
             if (items[i] != null) {
-                result[index++] = items[i];
+                result[i] = items[i];
             }
         }
-        return result;
+
+        return Arrays.copyOf(result, size);
     }
 
     public Item[] findByName(String key) {
