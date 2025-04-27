@@ -5,7 +5,8 @@ import java.time.format.DateTimeFormatter;
 
 public class StartUI {
     public static void main(String[] args) {
-        Item name = new Item("Егор");
+
+        Item name= new Item(10, "Егор");
         System.out.println(name);
         Item item = new Item("Не знаю что выводить но допустим так");
 
