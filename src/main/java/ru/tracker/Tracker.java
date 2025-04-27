@@ -15,15 +15,12 @@ public class Tracker {
 
     public Item findById(int id) {
         int index = indexOf(id);
-        if (index != -1) {
-            return items[index];
-        }
-        return null;
+        return index != -1 ? items[index] : null;
     }
 
     public Item[] findAll() {
-            return Arrays.copyOf(items, size);
-        }
+        return Arrays.copyOf(items, size);
+    }
 
     public Item[] findByName(String key) {
         Item[] temp = new Item[size];
