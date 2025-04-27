@@ -5,6 +5,8 @@ import java.time.format.DateTimeFormatter;
 
 public class StartUI {
     public static void main(String[] args) {
+        Item name = new Item("Егор");
+        System.out.println(name);
         Item item = new Item("Не знаю что выводить но допустим так");
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MMMM-EEEE-yyyy HH:mm:ss");
