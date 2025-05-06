@@ -13,12 +13,12 @@ public class Matches {
             String player = turn ? "Первый игрок" : "Второй игрок";
             System.out.println(player + ", введите число от 1 до 3:");
 
-            while (!input.hasNextInt()) {
+            while (!input.hasNextLine()) {
                 System.out.println("Ошибка! Введите корректное число.");
                 input.nextLine();
             }
 
-            int matches = input.nextInt();
+            int matches = Integer.parseInt(input.nextLine());
             input.nextLine();
 
             if (matches < 1 || matches > 3 || matches > count) {
