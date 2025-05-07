@@ -15,14 +15,13 @@ public class Matches {
 
             int matches = Integer.parseInt(input.nextLine());
 
-            if (matches < 1 || matches > 3 || matches > count) {
+            if (!(matches < 1 || matches > 3 || matches > count)) {
+                count -= matches;
+                System.out.println("Осталось спичек: " + count);
+                turn = !turn;
+            } else {
                 System.out.println("Ошибка! Введите число от 1 до 3, не превышающее количество оставшихся спичек (" + count + ")");
-                continue;
             }
-
-            count -= matches;
-            System.out.println("Осталось спичек: " + count);
-            turn = !turn;
         }
 
         if (!turn) {
