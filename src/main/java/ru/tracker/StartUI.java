@@ -18,7 +18,7 @@ public class StartUI {
                 tracker.add(item);
                 System.out.println("Добавленная заявка: " + item);
             } else if (select == 1) {
-                System.out.println("=== Все заявки ===");
+                System.out.println("=== Вывод всех заявок ===");
                 Item[] items = tracker.findAll();
                 for (Item item : items) {
                     System.out.println(item);
