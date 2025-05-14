@@ -34,8 +34,6 @@ public class StartUI {
                 System.out.print("Введите новое имя заявки: ");
                 String newName = scanner.nextLine();
                 Item updatedItem = new Item(newName);
-                updatedItem.setId(id);
-
                 if (tracker.replace(id, updatedItem)) {
                     System.out.println("Заявка успешно обновлена: " + updatedItem);
                 } else {
