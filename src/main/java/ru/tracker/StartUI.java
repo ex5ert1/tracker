@@ -52,7 +52,6 @@ public class StartUI {
                         break;
                     }
                 }
-
                 if (found) {
                     System.out.println("Ошибка! Заявка с таким ID не удалена.");
                 } else {
