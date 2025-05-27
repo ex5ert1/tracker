@@ -50,6 +50,17 @@ public class StartUI {
                 } else {
                     System.out.println("Ошибка! Заявка с таким ID не найдена.");
                 }
+            } else if (select == 4) {
+                System.out.println("=== Показать заявку по id ===");
+                System.out.print("Введите id: ");
+                int id = Integer.parseInt(scanner.nextLine());
+                Item item = tracker.findById(id);
+                if (item != null) {
+                    tracker.findById(id);
+                    System.out.println(item);
+                } else {
+                    System.out.println("Заявки с таким id не существует");
+                }
             } else if (select == 6) {
                 run = false;
             }
