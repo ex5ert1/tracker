@@ -56,7 +56,6 @@ public class StartUI {
                 int id = Integer.parseInt(scanner.nextLine());
                 Item item = tracker.findById(id);
                 if (item != null) {
-                    tracker.findById(id);
                     System.out.println(item);
                 } else {
                     System.out.println("Заявки с таким id не существует");
