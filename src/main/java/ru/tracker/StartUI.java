@@ -60,6 +60,19 @@ public class StartUI {
                 } else {
                     System.out.println("Заявки с таким id не существует");
                 }
+            } else if (select == 5) {
+                System.out.println("=== Показать заявки по имени ===");
+                System.out.print("Введите имя заявки ");
+                String name = scanner.nextLine();
+                Item[] foundItems = tracker.findByName(name);
+                if (foundItems.length > 0) {
+                    System.out.println("Найдены заявки:");
+                    for (Item item : foundItems) {
+                        System.out.println(item);
+                    }
+                } else {
+                    System.out.println("Заявки с таким именем не найдены");
+                }
             } else if (select == 6) {
                 run = false;
             }
