@@ -5,7 +5,7 @@ public class TransportUsage {
         Vehicle plane = new Plane();
         Vehicle train = new Train();
         Vehicle bus = new Bus();
-        Vehicle[] vehicles = new Vehicle[] {plane, train, bus};
+        Vehicle[] vehicles = new Vehicle[]{plane, train, bus};
         for (Vehicle a : vehicles) {
             a.move();
         }
