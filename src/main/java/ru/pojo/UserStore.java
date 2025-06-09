@@ -1,4 +1,4 @@
-package ru.tracker;
+package ru.pojo;
 
 public class UserStore {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package ru.tracker;
+package ru.pojo;
 
 public class User {
    private int id;
