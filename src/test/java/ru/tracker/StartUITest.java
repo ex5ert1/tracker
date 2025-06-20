@@ -23,13 +23,11 @@ class StartUITest {
         Tracker tracker = new Tracker();
         Item item = new Item("old item");
         tracker.add(item);
+
         Input input = new MockInput(
-                new String[] { "2", String.valueOf(item.getId()), "new item", "3"
-                }
+                new String[] { "0", String.valueOf(item.getId()), "new item", "1" }
         );
         UserAction[] actions = {
-                new CreateAction(),
-                new FindAllAction(),
                 new ReplaceAction(),
                 new ExitAction()
         };
@@ -44,11 +42,9 @@ class StartUITest {
         Item item = new Item("item to delete");
         tracker.add(item);
         Input input = new MockInput(
-                new String[] { "2", String.valueOf(item.getId()), "3" }
+                new String[] { "0", String.valueOf(item.getId()), "1" }
         );
         UserAction[] actions = {
-                new CreateAction(),
-                new FindAllAction(),
                 new DeleteAction(),
                 new ExitAction()
         };
