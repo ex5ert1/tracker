@@ -23,22 +23,17 @@ class StartUITest {
         Tracker tracker = new Tracker();
         Item item = new Item("old item");
         tracker.add(item);
-
         Input input = new MockInput(
-                new String[] {
-                        "0", "old item", "1", "2", String.valueOf(item.getId()), "new item", "3"
+                new String[] { "2", String.valueOf(item.getId()), "new item", "3"
                 }
         );
-
         UserAction[] actions = {
                 new CreateAction(),
                 new FindAllAction(),
                 new ReplaceAction(),
                 new ExitAction()
         };
-
         new StartUI().init(input, tracker, actions);
-
         Item updatedItem = tracker.findById(item.getId());
         assertThat(updatedItem.getName()).isEqualTo("new item");
     }
@@ -48,23 +43,16 @@ class StartUITest {
         Tracker tracker = new Tracker();
         Item item = new Item("item to delete");
         tracker.add(item);
-
         Input input = new MockInput(
-                new String[] {
-                        "0", "item to delete", "1", "3", String.valueOf(item.getId()), "4"
-                }
+                new String[] { "2", String.valueOf(item.getId()), "3" }
         );
-
         UserAction[] actions = {
                 new CreateAction(),
                 new FindAllAction(),
-                new ReplaceAction(),
                 new DeleteAction(),
                 new ExitAction()
         };
-
         new StartUI().init(input, tracker, actions);
-
         Item deletedItem = tracker.findById(item.getId());
         assertThat(deletedItem).isNull();
     }
