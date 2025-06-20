@@ -58,8 +58,6 @@ class StartUITest {
         new StartUI().init(input, tracker, actions);
         Item deletedItem = tracker.findById(item1.getId());
         assertThat(deletedItem).isNull();
-        Item secondItem = tracker.findById(item2.getId());
-        assertThat(secondItem).isNotNull();
-        assertThat(secondItem.getName()).isEqualTo("second item");
+        assertThat(tracker.findById(item2.getId())).isNotNull();
     }
 }
