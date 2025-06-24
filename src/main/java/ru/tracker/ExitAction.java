@@ -1,6 +1,9 @@
 package ru.tracker;
 
 public class ExitAction implements UserAction {
+    public ExitAction(Output output) {
+    }
+
     @Override
     public String name() {
         return "Завершить программу";

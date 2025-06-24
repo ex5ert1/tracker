@@ -1,6 +1,9 @@
 package ru.tracker;
 
 public class FindByNameAction implements UserAction {
+    public FindByNameAction(Output output) {
+    }
+
     @Override
     public String name() {
         return "Поиск заявки по имени";

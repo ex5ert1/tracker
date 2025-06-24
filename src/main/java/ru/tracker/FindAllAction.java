@@ -1,6 +1,9 @@
 package ru.tracker;
 
 public class FindAllAction implements UserAction {
+    public FindAllAction(Output output) {
+    }
+
     @Override
     public String name() {
         return "Вывести все заявки";

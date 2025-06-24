@@ -1,6 +1,9 @@
 package ru.tracker;
 
 public class ReplaceAction implements UserAction {
+    public ReplaceAction(Output output) {
+    }
+
     @Override
     public String name() {
         return "Редактировать заявку";
