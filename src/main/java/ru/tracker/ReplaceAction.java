@@ -1,7 +1,10 @@
 package ru.tracker;
 
 public class ReplaceAction implements UserAction {
+    private final Output output;
+
     public ReplaceAction(Output output) {
+        this.output = output;
     }
 
     @Override
@@ -15,9 +18,9 @@ public class ReplaceAction implements UserAction {
         String newName = input.askStr("Введите новое имя заявки: ");
         Item updatedItem = new Item(newName);
         if (tracker.replace(id, updatedItem)) {
-            System.out.println("Заявка успешно обновлена: " + updatedItem);
+            output.println("Заявка успешно обновлена: " + updatedItem);
         } else {
-            System.out.println("Ошибка! Заявка с ID " + id + " не найдена.");
+            output.println("Ошибка! Заявка с ID " + id + " не найдена.");
         }
         return true;
     }

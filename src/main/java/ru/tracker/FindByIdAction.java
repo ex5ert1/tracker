@@ -1,7 +1,10 @@
 package ru.tracker;
 
 public class FindByIdAction implements UserAction {
+    private final Output output;
+
     public FindByIdAction(Output output) {
+        this.output = output;
     }
 
     @Override
@@ -14,9 +17,9 @@ public class FindByIdAction implements UserAction {
         int id = input.askInt("Введите id: ");
         Item item = tracker.findById(id);
         if (item != null) {
-            System.out.println(item);
+            output.println(item);
         } else {
-            System.out.println("Заявки с таким id не существует");
+            output.println("Заявки с таким id не существует");
         }
         return true;
     }

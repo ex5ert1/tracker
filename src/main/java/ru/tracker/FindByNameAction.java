@@ -1,7 +1,10 @@
 package ru.tracker;
 
 public class FindByNameAction implements UserAction {
+    private final Output output;
+
     public FindByNameAction(Output output) {
+        this.output = output;
     }
 
     @Override
@@ -14,12 +17,12 @@ public class FindByNameAction implements UserAction {
         String name = input.askStr("Ведите имя заявки: ");
         Item[] foundItems = tracker.findByName(name);
         if (foundItems.length > 0) {
-            System.out.println("Найдены заявки:");
+            output.println("Найдены заявки:");
             for (Item item : foundItems) {
-                System.out.println(item);
+                output.println(item);
             }
         } else {
-            System.out.println("Заявки с таким именем не найдены");
+            output.println("Заявки с таким именем не найдены");
         }
         return true;
     }
