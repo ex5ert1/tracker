@@ -122,6 +122,37 @@ class StartUITest {
     }
 
     @Test
+    void whenNoReplaceItemTestOutputIsSuccessfully() {
+        Output output = new MockOutput();
+        Tracker tracker = new Tracker();
+        String replaceName = "New Test Name";
+        Input input = new MockInput(
+                new String[] {"0", "1", replaceName, "1"},
+                output
+        );
+        UserAction[] actions = new UserAction[]{
+                new ReplaceAction(output),
+                new ExitAction(output)
+        };
+        new StartUI(output).init(input, tracker, actions);
+        String ln = System.lineSeparator();
+        assertThat(output.toString()).isEqualTo(
+                "Меню:" + ln
+                        + "0. Редактировать заявку" + ln
+                        + "1. Завершить программу" + ln
+                        + "Выбрать: " + ln
+                        + "Введите ID редактируемой заявки: " + ln
+                        + "Введите новое имя заявки: " + ln
+                        + "Ошибка! Заявка с ID 1 не найдена." + ln
+                        + "Меню:" + ln
+                        + "0. Редактировать заявку" + ln
+                        + "1. Завершить программу" + ln
+                        + "Выбрать: " + ln
+                        + "=== Завершение программы ===" + ln
+        );
+    }
+
+    @Test
     void whenFindAllItemsTestOutputIsSuccessfully() {
         Output output = new MockOutput();
         Tracker tracker = new Tracker();
@@ -145,6 +176,35 @@ class StartUITest {
                         + "=== Вывод всех заявок ===" + ln
                         + item1 + ln
                         + item2 + ln
+                        + "Меню:" + ln
+                        + "0. Вывести все заявки" + ln
+                        + "1. Завершить программу" + ln
+                        + "Выбрать: " + ln
+                        + "=== Завершение программы ===" + ln
+        );
+    }
+
+    @Test
+    void whenFindAllINoItemsTestOutputIsSuccessfully() {
+        Output output = new MockOutput();
+        Tracker tracker = new Tracker();
+        Input input = new MockInput(
+                new String[] {"0", "1"},
+                output
+        );
+        UserAction[] actions = new UserAction[] {
+                new FindAllAction(output),
+                new ExitAction(output)
+        };
+        new StartUI(output).init(input, tracker, actions);
+        String ln = System.lineSeparator();
+        assertThat(output.toString()).isEqualTo(
+                "Меню:" + ln
+                        + "0. Вывести все заявки" + ln
+                        + "1. Завершить программу" + ln
+                        + "Выбрать: " + ln
+                        + "=== Вывод всех заявок ===" + ln
+                        + "Хранилище еще не содержит заявок" + ln
                         + "Меню:" + ln
                         + "0. Вывести все заявки" + ln
                         + "1. Завершить программу" + ln
@@ -233,7 +293,7 @@ class StartUITest {
                         + "1. Завершить программу" + ln
                         + "Выбрать: " + ln
                         + "Введите id: " + ln
-                        + "Заявки с таким id не существует" + ln  // Добавляем ожидаемый вывод при отсутствии заявки
+                        + "Заявки с таким id не существует" + ln
                         + "Меню:" + ln
                         + "0. Поиск заявки по id" + ln
                         + "1. Завершить программу" + ln
@@ -262,7 +322,7 @@ class StartUITest {
                         + "1. Завершить программу" + ln
                         + "Выбрать: " + ln
                         + "Ведите имя заявки: " + ln
-                        + "Заявки с таким именем не найдены" + ln // Ожидаемое сообщение об ошибке
+                        + "Заявки с таким именем не найдены" + ln
                         + "Меню:" + ln
                         + "0. Поиск заявки по имени" + ln
                         + "1. Завершить программу" + ln
