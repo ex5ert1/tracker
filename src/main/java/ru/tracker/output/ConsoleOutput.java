@@ -1,4 +1,4 @@
-package ru.tracker;
+package ru.tracker.output;
 
 public class ConsoleOutput implements Output {
     @Override

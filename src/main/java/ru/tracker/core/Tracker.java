@@ -1,4 +1,6 @@
-package ru.tracker;
+package ru.tracker.core;
+
+import ru.tracker.model.Item;
 
 import java.util.Arrays;
 

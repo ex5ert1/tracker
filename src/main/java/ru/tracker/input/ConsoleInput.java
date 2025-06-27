@@ -1,4 +1,4 @@
-package ru.tracker;
+package ru.tracker.input;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package ru.tracker;
+package ru.tracker.input;
 
 public interface Input {
     String askStr(String question);

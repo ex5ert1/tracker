@@ -1,9 +1,13 @@
-package ru.tracker;
+package ru.tracker.action;
 
-public class ExitAction implements UserAction {
+import ru.tracker.input.Input;
+import ru.tracker.output.Output;
+import ru.tracker.core.Tracker;
+
+public class Exit implements UserAction {
     private final Output output;
 
-    public ExitAction(Output output) {
+    public Exit(Output output) {
         this.output = output;
     }
 

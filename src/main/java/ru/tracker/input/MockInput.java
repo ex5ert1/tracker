@@ -1,4 +1,6 @@
-package ru.tracker;
+package ru.tracker.input;
+
+import ru.tracker.output.Output;
 
 public class MockInput implements Input {
     private String[] answers;
