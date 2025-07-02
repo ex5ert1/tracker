@@ -3,7 +3,7 @@ package ru.ex;
 public class FindEl {
     public static int indexOf(String[] value, String key) throws ElementNotFoundException {
         if (value == null || key == null) {
-            throw new NullPointerException("Параметры не могут быть null");
+            throw new InvalidArgumentException("Параметры не могут быть null");
         }
         for (int i = 0; i < value.length; i++) {
             if (value[i].equals(key)) {
