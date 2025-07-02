@@ -12,6 +12,7 @@ public class FindEl {
         }
         throw new ElementNotFoundException("Элемент " + key + " не найден в массиве");
     }
+
     public static void main(String[] args) {
         String[] array = {"apple", "banana", "cherry", "date"};
 
