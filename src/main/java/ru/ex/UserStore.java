@@ -28,21 +28,20 @@ public class UserStore {
     }
 
     public static void main(String[] args) {
+        User[] users = {
+                new User("Ivan Ivanov", true)
+        };
+
         try {
-            User[] users = {
-                    new User("Ivan Ivanov", true)
-            };
             User user = findUser(users, "Ivan Ivanov");
             if (validate(user)) {
                 System.out.println("This user has an access");
             }
-        } catch (InvalidArgumentException e) {
-            System.err.println("Ошибка аргумента: " + e.getMessage());
+        } catch (UserInvalidException e) {
+            System.err.println("Ошибка валидации: " + e.getMessage());
         } catch (UserNotFoundException e) {
             System.err.println("Пользователь не найден: " + e.getMessage());
-        } catch (Exception e) {
-            System.err.println("Произошла непредвиденная ошибка: " + e.getMessage());
         }
     }
-    }
+}
 
