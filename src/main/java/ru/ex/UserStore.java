@@ -3,15 +3,14 @@ package ru.ex;
 public class UserStore {
     public static User findUser(User[] users, String login) throws UserNotFoundException {
         if (users == null) {
-            throw new UserNotFoundException("Массив пользователей не может быть null");
+            throw new UserInvalidException("Массив пользователей не может быть null");
         }
         for (User user : users) {
             if (user.getUsername().equals(login)) {
                 return user;
             }
-            throw new UserNotFoundException("Пользователь с именем " + login + " не найден");
         }
-        return null;
+        throw new UserNotFoundException("Пользователь с именем " + login + " не найден");
     }
 
     public static boolean validate(User user) throws UserInvalidException {
