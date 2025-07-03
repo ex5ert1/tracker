@@ -27,7 +27,8 @@ public class UserStore {
         return true;
     }
 
-        public static void main(String[] args) throws UserNotFoundException {
+    public static void main(String[] args) {
+        try {
             User[] users = {
                     new User("Ivan Ivanov", true)
             };
@@ -35,6 +36,13 @@ public class UserStore {
             if (validate(user)) {
                 System.out.println("This user has an access");
             }
+        } catch (InvalidArgumentException e) {
+            System.err.println("Ошибка аргумента: " + e.getMessage());
+        } catch (UserNotFoundException e) {
+            System.err.println("Пользователь не найден: " + e.getMessage());
+        } catch (Exception e) {
+            System.err.println("Произошла непредвиденная ошибка: " + e.getMessage());
         }
+    }
     }
 
