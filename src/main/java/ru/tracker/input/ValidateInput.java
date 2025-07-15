@@ -24,7 +24,6 @@ public class ValidateInput extends ConsoleInput {
             if (input == null || input.isEmpty()) {
                 return "";
             }
-
             return input.trim();
         } catch (Exception e) {
             System.out.println("Произошла ошибка при чтении ввода");
