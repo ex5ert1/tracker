@@ -7,6 +7,8 @@ import ru.tracker.input.Input;
 import ru.tracker.output.ConsoleOutput;
 import ru.tracker.output.Output;
 
+import static java.lang.System.out;
+
 public class StartUI {
     private final Output output;
 
@@ -19,6 +21,10 @@ public class StartUI {
         while (run) {
             showMenu(actions);
             int select = input.askInt("Выбрать: ");
+            if (select < 0 || select >= actions.length) {
+                out.println("Неверный ввод, вы можете выбрать: 0 .. " + (actions.length - 1));
+                continue;
+            }
             UserAction action = actions[select];
             run = action.execute(input, tracker);
         }
