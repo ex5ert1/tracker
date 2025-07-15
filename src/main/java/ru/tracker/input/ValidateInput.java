@@ -6,13 +6,11 @@ public class ValidateInput extends ConsoleInput {
     public int askInt(String question) {
         while (true) {
             try {
-                String input = super.askStr(question).trim();
-                if (input.isEmpty()) {
-                    throw new NumberFormatException();
-                }
-                return Integer.parseInt(input);
+                return super.askInt(question);
             } catch (NumberFormatException e) {
                 System.out.println("Пожалуйста, введите корректные числовые данные");
+            } catch (Exception e) {
+                System.out.println("Произошла ошибка при чтении ввода");
             }
         }
     }
