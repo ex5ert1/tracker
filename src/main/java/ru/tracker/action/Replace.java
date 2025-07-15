@@ -22,7 +22,6 @@ public class Replace implements UserAction {
         try {
             int id = input.askInt("Введите ID редактируемой заявки: ");
             String newName = input.askStr("Введите новое имя заявки: ");
-
             if (newName == null || newName.isEmpty()) {
                 throw new IllegalArgumentException("Название заявки не может быть пустым");
             }
