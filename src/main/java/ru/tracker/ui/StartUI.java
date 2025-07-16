@@ -7,7 +7,6 @@ import ru.tracker.input.ValidateInput;
 import ru.tracker.output.ConsoleOutput;
 import ru.tracker.output.Output;
 
-
 public class StartUI {
     private final Output output;
 
