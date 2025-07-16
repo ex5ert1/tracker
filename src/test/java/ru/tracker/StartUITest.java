@@ -5,7 +5,6 @@ import ru.tracker.action.*;
 import ru.tracker.core.Tracker;
 import ru.tracker.input.Input;
 import ru.tracker.input.MockInput;
-import ru.tracker.input.ValidateInput;
 import ru.tracker.model.Item;
 import ru.tracker.output.MockOutput;
 import ru.tracker.output.Output;
