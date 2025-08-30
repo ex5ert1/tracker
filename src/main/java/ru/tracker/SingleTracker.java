@@ -2,11 +2,11 @@ package ru.tracker;
 
 import ru.tracker.core.Tracker;
 import ru.tracker.model.Item;
+import java.util.List;
 
 public final class SingleTracker {
 
     private static SingleTracker instance = null;
-
     private Tracker tracker = new Tracker();
 
     private SingleTracker() {
@@ -27,11 +27,11 @@ public final class SingleTracker {
         return tracker.findById(id);
     }
 
-    public Item[] findAll() {
+    public List<Item> findAll() {
         return tracker.findAll();
     }
 
-    public Item[] findByName(String key) {
+    public List<Item> findByName(String key) {
         return tracker.findByName(key);
     }
 
