@@ -10,6 +10,8 @@ import ru.tracker.output.MockOutput;
 import ru.tracker.output.Output;
 import ru.tracker.ui.StartUI;
 
+import java.util.List;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 class StartUITest {
@@ -26,7 +28,8 @@ class StartUITest {
                 new Exit(output)
         };
         new StartUI(output).init(input, tracker, actions);
-        assertThat(tracker.findAll()[0].getName()).isEqualTo("Item name");
+        List<Item> allItems = tracker.findAll();
+        assertThat(allItems.get(0).getName()).isEqualTo("Item name");
     }
 
     @Test
