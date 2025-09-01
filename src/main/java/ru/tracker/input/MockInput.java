@@ -2,12 +2,14 @@ package ru.tracker.input;
 
 import ru.tracker.output.Output;
 
+import java.util.ArrayList;
+
 public class MockInput implements Input {
-    private String[] answers;
+    private ArrayList<String> answers;
     private int position = 0;
     private Output output;
 
-    public MockInput(String[] answers, Output output) {
+    public MockInput(ArrayList<String> answers, Output output) {
         this.answers = answers;
         this.output = output;
     }
@@ -15,7 +17,7 @@ public class MockInput implements Input {
     @Override
     public String askStr(String question) {
         output.println(question);
-        return answers[position++];
+        return answers.get(position++);
     }
 
     @Override
