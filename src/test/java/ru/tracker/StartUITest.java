@@ -139,4 +139,163 @@ class StartUITest {
                         + "=== Завершение программы ===" + ln
         );
     }
+
+    @Test
+    void whenFindAllItemsTestOutputIsSuccessfully() {
+        Output output = new MockOutput();
+        Tracker tracker = new Tracker();
+        Item item1 = tracker.add(new Item("Заявка 1"));
+        Item item2 = tracker.add(new Item("Заявка 2"));
+
+        ArrayList<String> answers = new ArrayList<>();
+        answers.add("0");
+        answers.add("1");
+
+        Input input = new MockInput(answers, output);
+
+        ArrayList<UserAction> actions = new ArrayList<>();
+        actions.add(new FindAll(output));
+        actions.add(new Exit(output));
+
+        new StartUI(output).init(input, tracker, actions);
+        String ln = System.lineSeparator();
+        assertThat(output.toString()).isEqualTo(
+                "Меню:" + ln
+                        + "0. Вывести все заявки" + ln
+                        + "1. Завершить программу" + ln
+                        + "Выбрать: " + ln
+                        + "=== Вывод всех заявок ===" + ln
+                        + item1 + ln
+                        + item2 + ln
+                        + "Меню:" + ln
+                        + "0. Вывести все заявки" + ln
+                        + "1. Завершить программу" + ln
+                        + "Выбрать: " + ln
+                        + "=== Завершение программы ===" + ln
+        );
+    }
+
+    @Test
+    void whenFindAllINoItemsTestOutputIsSuccessfully() {
+        Output output = new MockOutput();
+        Tracker tracker = new Tracker();
+
+        ArrayList<String> answers = new ArrayList<>();
+        answers.add("0");
+        answers.add("1");
+
+        Input input = new MockInput(answers, output);
+
+        ArrayList<UserAction> actions = new ArrayList<>();
+        actions.add(new FindAll(output));
+        actions.add(new Exit(output));
+
+        new StartUI(output).init(input, tracker, actions);
+        String ln = System.lineSeparator();
+        assertThat(output.toString()).isEqualTo(
+                "Меню:" + ln
+                        + "0. Вывести все заявки" + ln
+                        + "1. Завершить программу" + ln
+                        + "Выбрать: " + ln
+                        + "=== Вывод всех заявок ===" + ln
+                        + "Хранилище еще не содержит заявок" + ln
+                        + "Меню:" + ln
+                        + "0. Вывести все заявки" + ln
+                        + "1. Завершить программу" + ln
+                        + "Выбрать: " + ln
+                        + "=== Завершение программы ===" + ln
+        );
+    }
+
+    @Test
+    void whenNoItemsFoundTestOutputIsSuccessfully() {
+        Output output = new MockOutput();
+        Tracker tracker = new Tracker();
+        ArrayList<String> answers = new ArrayList<>();
+        answers.add("0");
+        answers.add("1");
+
+        Input input = new MockInput(answers, output);
+
+        ArrayList<UserAction> actions = new ArrayList<>();
+        actions.add(new FindAll(output));
+        actions.add(new Exit(output));
+
+        new StartUI(output).init(input, tracker, actions);
+        String ln = System.lineSeparator();
+        assertThat(output.toString()).isEqualTo(
+                "Меню:" + ln
+                        + "0. Вывести все заявки" + ln
+                        + "1. Завершить программу" + ln
+                        + "Выбрать: " + ln
+                        + "=== Вывод всех заявок ===" + ln
+                        + "Хранилище еще не содержит заявок" + ln
+                        + "Меню:" + ln
+                        + "0. Вывести все заявки" + ln
+                        + "1. Завершить программу" + ln
+                        + "Выбрать: " + ln
+                        + "=== Завершение программы ===" + ln
+        );
+    }
+    @Test
+    void whenFindByNameItemsTestOutputIsSuccessfully() {
+        Output output = new MockOutput();
+        Tracker tracker = new Tracker();
+        Item item1 = tracker.add(new Item("Заявка 1"));
+        Item item2 = tracker.add(new Item("Заявка 2"));
+        ArrayList<String> answers = new ArrayList<>();
+        answers.add("0");
+        answers.add("Заявка 1");
+        answers.add("1");
+
+        Input input = new MockInput(answers, output);
+
+        ArrayList<UserAction> actions = new ArrayList<>();
+        actions.add(new FindByName(output));
+        actions.add(new Exit(output));
+
+        new StartUI(output).init(input, tracker, actions);
+        String ln = System.lineSeparator();
+        assertThat(output.toString()).isEqualTo(
+                "Меню:" + ln
+                        + "0. Поиск заявки по имени" + ln
+                        + "1. Завершить программу" + ln
+                        + "Выбрать: " + ln
+                        + "Введите имя заявки: " + ln
+                        + "Найдены заявки:" + ln
+                        + item1 + ln
+                        + "Меню:" + ln
+                        + "0. Поиск заявки по имени" + ln
+                        + "1. Завершить программу" + ln
+                        + "Выбрать: " + ln
+                        + "=== Завершение программы ===" + ln
+        );
+    }
+
+    @Test
+    void whenInvalidExit() {
+        Output output = new MockOutput();
+        Tracker tracker = new Tracker();
+        ArrayList<String> answers = new ArrayList<>();
+        answers.add("9");
+        answers.add("0");
+
+        Input input = new MockInput(answers, output);
+
+        ArrayList<UserAction> actions = new ArrayList<>();
+        actions.add(new Exit(output));
+
+        new StartUI(output).init(input, tracker, actions);
+        String ln = System.lineSeparator();
+        assertThat(output.toString()).isEqualTo(
+                "Меню:" + ln
+                        + "0. Завершить программу" + ln
+                        + "Выбрать: " + ln
+                        + "Неверный ввод, вы можете выбрать: 0 .. 0" + ln
+                        + "Меню:" + ln
+                        + "0. Завершить программу" + ln
+                        + "Выбрать: " + ln
+                        + "=== Завершение программы ===" + ln
+        );
+    }
 }
