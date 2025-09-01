@@ -16,7 +16,8 @@ public class Tracker {
     }
 
     public Item findById(int id) {
-        return items.contains(id) ? items.get(items.indexOf(id)) : null;
+        int index = indexOf(id);
+        return index != -1 ? items.get(index) : null;
     }
 
     public List<Item> findAll() {
