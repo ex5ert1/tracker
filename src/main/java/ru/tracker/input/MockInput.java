@@ -2,7 +2,6 @@ package ru.tracker.input;
 
 import ru.tracker.output.Output;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class MockInput implements Input {
