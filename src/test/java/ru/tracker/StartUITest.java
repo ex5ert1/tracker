@@ -237,6 +237,7 @@ class StartUITest {
                         + "=== Завершение программы ===" + ln
         );
     }
+
     @Test
     void whenFindByNameItemsTestOutputIsSuccessfully() {
         Output output = new MockOutput();
