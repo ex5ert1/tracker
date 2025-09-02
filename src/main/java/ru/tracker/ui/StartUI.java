@@ -7,7 +7,6 @@ import ru.tracker.input.Input;
 import ru.tracker.input.ValidateInput;
 import ru.tracker.output.ConsoleOutput;
 import ru.tracker.output.Output;
-import java.util.ArrayList;
 import java.util.List;
 
 public class StartUI {
