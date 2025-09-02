@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Test;
 import ru.tracker.output.MockOutput;
 import ru.tracker.output.Output;
 import java.util.List;
-
 import static org.assertj.core.api.Assertions.assertThat;
 
 class ValidateInputTest {
@@ -49,7 +48,7 @@ class ValidateInputTest {
     @Test
     void whenValidNegativeInputs() {
         Output output = new MockOutput();
-        List<String> answers = List.of("1", "2", "-579");
+        List<String> answers = List.of("-1", "2", "-579");
 
         Input in = new MockInput(answers, output);
         ValidateInput input = new ValidateInput(output, in);

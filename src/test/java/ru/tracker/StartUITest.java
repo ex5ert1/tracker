@@ -260,10 +260,8 @@ class StartUITest {
     void whenInvalidExit() {
         Output output = new MockOutput();
         Tracker tracker = new Tracker();
-        List<String> answers = List.of("9", "1");
-
+        List<String> answers = List.of("9", "0");
         Input input = new MockInput(answers, output);
-
         List<UserAction> actions = List.of(
                 new Exit(output)
         );
