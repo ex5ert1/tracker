@@ -3,7 +3,8 @@ package ru.tracker.input;
 import org.junit.jupiter.api.Test;
 import ru.tracker.output.MockOutput;
 import ru.tracker.output.Output;
-import java.util.ArrayList;
+import java.util.List;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 class ValidateInputTest {
@@ -11,9 +12,7 @@ class ValidateInputTest {
     @Test
     void whenInvalidInput() {
         Output output = new MockOutput();
-        ArrayList<String> answers = new ArrayList<>();
-        answers.add("one");
-        answers.add("1");
+        List<String> answers = List.of("one", "1");
 
         Input in = new MockInput(answers, output);
         ValidateInput input = new ValidateInput(output, in);
@@ -24,8 +23,7 @@ class ValidateInputTest {
     @Test
     void whenValidInput() {
         Output output = new MockOutput();
-        ArrayList<String> answers = new ArrayList<>();
-        answers.add("1");
+        List<String> answers = List.of("1");
 
         Input in = new MockInput(answers, output);
         ValidateInput input = new ValidateInput(output, in);
@@ -36,10 +34,7 @@ class ValidateInputTest {
     @Test
     void whenValidInputs() {
         Output output = new MockOutput();
-        ArrayList<String> answers = new ArrayList<>();
-        answers.add("1");
-        answers.add("2");
-        answers.add("579");
+        List<String> answers = List.of("1", "2", "579");
 
         Input in = new MockInput(answers, output);
         ValidateInput input = new ValidateInput(output, in);
@@ -54,10 +49,7 @@ class ValidateInputTest {
     @Test
     void whenValidNegativeInputs() {
         Output output = new MockOutput();
-        ArrayList<String> answers = new ArrayList<>();
-        answers.add("-1");
-        answers.add("2");
-        answers.add("-579");
+        List<String> answers = List.of("1", "2", "-579");
 
         Input in = new MockInput(answers, output);
         ValidateInput input = new ValidateInput(output, in);
