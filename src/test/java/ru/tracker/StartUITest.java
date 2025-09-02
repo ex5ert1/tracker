@@ -10,7 +10,6 @@ import ru.tracker.output.MockOutput;
 import ru.tracker.output.Output;
 import ru.tracker.ui.StartUI;
 import java.util.List;
-
 import static org.assertj.core.api.Assertions.assertThat;
 
 class StartUITest {
@@ -25,7 +24,6 @@ class StartUITest {
                 new Create(output),
                 new Exit(output)
         );
-
 
         new StartUI(output).init(input, tracker, actions);
         List<Item> allItems = tracker.findAll();
