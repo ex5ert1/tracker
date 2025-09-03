@@ -1,6 +1,7 @@
 package ru.collection;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class UniqueText {
@@ -12,10 +13,7 @@ public class UniqueText {
             return false;
         }
 
-        Set<String> originSet = new HashSet<>();
-        for (String word : originWords) {
-            originSet.add(word);
-        }
+        Set<String> originSet = new HashSet<>(List.of(originWords));
 
         for (String word : duplicateWords) {
             if (!originSet.contains(word)) {
