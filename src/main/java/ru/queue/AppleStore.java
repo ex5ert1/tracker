@@ -13,12 +13,13 @@ public class AppleStore {
     }
 
     public String getLastHappyCustomer() {
-        int available = count;
         String lastHappy = null;
 
-        for (int i = 0; i < available; i++) {
+        for (int i = 0; i < count; i++) {
             Customer customer = queue.poll();
-            lastHappy = customer.name();
+            if (i == count - 1) {
+                lastHappy = customer.name();
+            }
         }
         return lastHappy;
     }
