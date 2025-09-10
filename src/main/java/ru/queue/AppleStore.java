@@ -16,21 +16,18 @@ public class AppleStore {
         int available = count;
         String lastHappy = null;
 
-        while (available > 0) {
+        for (int i = 0; i < available; i++) {
             Customer customer = queue.poll();
             lastHappy = customer.name();
-            available--;
         }
-
         return lastHappy;
     }
 
     public String getFirstUpsetCustomer() {
         int available = count;
 
-        while (available > 0) {
+        for (int i = 0; i < available; i++) {
             queue.poll();
-            available--;
         }
         return queue.poll().name();
     }
