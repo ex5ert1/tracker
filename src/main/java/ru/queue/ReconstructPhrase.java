@@ -26,7 +26,6 @@ public class ReconstructPhrase {
     private String getDescendingElements() {
         StringBuilder result = new StringBuilder();
         int size = descendingElements.size();
-
         for (int i = 0; i < size; i++) {
             result.append(descendingElements.pollLast());
         }
