@@ -4,7 +4,8 @@ import java.util.*;
 
 public class AnalyzeByMap {
     public static double averageScore(List<Pupil> pupils) {
-        int totalScore = 0, totalSubjects = 0;
+        int totalScore = 0;
+        int totalSubjects = 0;
         for (Pupil p : pupils) {
             for (Subject s : p.subjects()) {
                 totalScore += s.score();
@@ -59,7 +60,7 @@ public class AnalyzeByMap {
                 map.merge(s.name(), s.score(), Integer::sum);
             }
         }
-
+        
         Label best = null;
         for (Map.Entry<String, Integer> e : map.entrySet()) {
             Label current = new Label(e.getKey(), e.getValue());
