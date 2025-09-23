@@ -19,8 +19,10 @@ public class AnalyzeByMap {
         List<Label> result = new ArrayList<>();
         for (Pupil p : pupils) {
             int sum = 0, count = p.subjects().size();
-            for (Subject s : p.subjects()) sum += s.score();
-            result.add(new Label(p.name(), count > 0 ? (double) sum / count : 0));
+            for (Subject s : p.subjects()) {
+                sum += s.score();
+                result.add(new Label(p.name(), count > 0 ? (double) sum / count : 0));
+            }
         }
         return result;
     }
@@ -46,9 +48,11 @@ public class AnalyzeByMap {
         Label best = null;
         for (Pupil p : pupils) {
             int sum = 0;
-            for (Subject s : p.subjects()) sum += s.score();
-            Label current = new Label(p.name(), sum);
-            if (best == null || current.compareTo(best) > 0) best = current;
+            for (Subject s : p.subjects()) {
+                sum += s.score();
+                Label current = new Label(p.name(), sum);
+                if (best == null || current.compareTo(best) > 0) best = current;
+            }
         }
         return best;
     }
