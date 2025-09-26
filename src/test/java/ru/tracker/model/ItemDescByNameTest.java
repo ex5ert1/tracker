@@ -24,12 +24,6 @@ class ItemDescByNameTest {
         expected.add(new Item(2, "Апельсин", fixedTime));
         items.sort(Collections.reverseOrder(new ItemAscByName()));
 
-        assertEquals(expected.size(), items.size());
-        for (int i = 0; i < items.size(); i++) {
-            Item actualItem = items.get(i);
-            Item expectedItem = expected.get(i);
-            assertEquals(expectedItem.getId(), actualItem.getId());
-            assertEquals(expectedItem.getName(), actualItem.getName());
-        }
+        assertEquals(expected, items);
     }
 }

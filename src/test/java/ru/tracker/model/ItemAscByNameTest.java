@@ -23,14 +23,6 @@ class ItemAscByNameTest {
         expected.add(new Item(1, "Яблоко", fixedTime));
         items.sort(new ItemAscByName());
 
-        assertEquals(expected.size(), items.size());
-        for (int i = 0; i < items.size(); i++) {
-            Item actual = items.get(i);
-            Item expectedItem = expected.get(i);
-
-            assertEquals(expectedItem.getId(), actual.getId());
-            assertEquals(expectedItem.getName(), actual.getName());
-            assertEquals(expectedItem.getCreated(), actual.getCreated());
-        }
+        assertEquals(expected, items);
     }
 }
