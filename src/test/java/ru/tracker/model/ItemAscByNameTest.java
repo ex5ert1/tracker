@@ -1,10 +1,7 @@
 package ru.tracker.model;
 
 import org.junit.jupiter.api.Test;
-
-import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
-
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
