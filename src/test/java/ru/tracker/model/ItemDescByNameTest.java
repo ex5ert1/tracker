@@ -12,24 +12,19 @@ class ItemDescByNameTest {
     void testSortDescByName() {
         LocalDateTime fixedTime = LocalDateTime.now();
 
-        Item item1 = new Item(2, "Апельсин", fixedTime);
-        Item item2 = new Item(4, "Банан", fixedTime);
-        Item item3 = new Item(3, "Груша", fixedTime);
-        Item item4 = new Item(1, "Яблоко", fixedTime);
-
         List<Item> items = new ArrayList<>();
-        items.add(item3);
-        items.add(item4);
-        items.add(item1);
-        items.add(item2);
+        items.add(new Item(3, "Груша", fixedTime));
+        items.add(new Item(1, "Яблоко", fixedTime));
+        items.add(new Item(2, "Апельсин", fixedTime));
+        items.add(new Item(4, "Банан", fixedTime));
 
         List<Item> expected = new ArrayList<>();
-        expected.add(item4);
-        expected.add(item3);
-        expected.add(item2);
-        expected.add(item1);
+        expected.add(new Item(1, "Яблоко", fixedTime));
+        expected.add(new Item(3, "Груша", fixedTime));
+        expected.add(new Item(4, "Банан", fixedTime));
+        expected.add(new Item(2, "Апельсин", fixedTime));
 
         items.sort(Collections.reverseOrder(new ItemAscByName()));
-        assertTrue(items.size() == expected.size(), "Размеры списков не совпадают");
+        assertTrue(items.size() == expected.size());
     }
 }
