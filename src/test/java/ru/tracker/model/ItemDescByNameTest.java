@@ -28,7 +28,7 @@ class ItemDescByNameTest {
         expected.add(item2);
         expected.add(item1);
 
-        Collections.sort(items, Collections.reverseOrder(new ItemAscByName()));
+        Collections.sort(items, new ItemDescByName());
         assertEquals(expected, items);
     }
 }
