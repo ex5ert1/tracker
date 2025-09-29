@@ -2,7 +2,6 @@ package ru.tracker.model;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Objects;
 
 public class Item {
     private int id;
