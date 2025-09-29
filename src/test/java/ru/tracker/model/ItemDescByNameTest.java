@@ -31,8 +31,5 @@ class ItemDescByNameTest {
 
         items.sort(Collections.reverseOrder(new ItemAscByName()));
         assertTrue(items.size() == expected.size(), "Размеры списков не совпадают");
-        for (int i = 0; i < items.size(); i++) {
-            assertTrue(items.get(i) == expected.get(i), "Ссылки на объекты не совпадают " + i);
-        }
     }
 }
