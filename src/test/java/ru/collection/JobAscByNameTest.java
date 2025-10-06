@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class JobAscByNameTest {
 
     @Test
-    void TestAscByName() {
+    void testAscByName() {
         Job job1 = new Job("А", 1);
         Job job2 = new Job("B", 2);
 
