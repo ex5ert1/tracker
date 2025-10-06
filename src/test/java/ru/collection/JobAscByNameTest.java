@@ -9,7 +9,7 @@ class JobAscByNameTest {
 
     @Test
     void testAscByName() {
-        Job job1 = new Job("А", 1);
+        Job job1 = new Job("A", 1);
         Job job2 = new Job("B", 2);
 
         assertThat(new JobAscByName().compare(job1, job2)).isLessThan(0);
