@@ -10,10 +10,12 @@ import java.util.LinkedList;
  */
 
 public class PriorityQueue {
+
     /**
      * Хранение задания осуществляется в коллекции типа LinkedList
      */
     private final LinkedList<Task> tasks = new LinkedList<>();
+
     /**
      * Метод принимает на вход заявку и добавляет ее в очередь.
      * Если встречаются 2 задания с одинаковым приоритетом, то в очереди
@@ -30,6 +32,7 @@ public class PriorityQueue {
         }
         this.tasks.add(index, task);
     }
+
     /**
      * Метод позволяет получить первую задачу в очереди
      * @return возвращает задачу из головы очереди или null если очередь пуста
