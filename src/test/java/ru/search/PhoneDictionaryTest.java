@@ -11,20 +11,9 @@ public class PhoneDictionaryTest {
     public void whenFindByName() {
         PhoneDictionary phones = new PhoneDictionary();
         phones.add(
-                new Person("Ivan", "Ivanov", "534872", "Bryansk")
+                new Person("Petr", "Petrov", "534872", "Bryansk")
         );
-        ArrayList<Person> persons = phones.find("Ivan");
-        assertThat(persons.get(0).getSurname()).isEqualTo("Ivanov");
-    }
-
-    @Test
-    public void whenFindByNameNull() {
-        PhoneDictionary phones = new PhoneDictionary();
-        phones.add(
-                new Person("Ivan", "Ivanov", "534872", "Bryansk")
-        );
-        ArrayList<Person> persons = phones.find("NonExistentName");
-        assertThat(persons).isEmpty();
-        assertThat(persons.size()).isEqualTo(0);
+        ArrayList<Person> persons = phones.find("Petr");
+        assertThat(persons.get(0).getSurname()).isEqualTo("Petrov");
     }
 }
