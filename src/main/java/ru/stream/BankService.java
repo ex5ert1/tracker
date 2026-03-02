@@ -4,12 +4,13 @@ import ru.bank.Account;
 import ru.bank.User;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 public record BankService(Map<User, List<Account>> users) {
     public User findByPassport(String passport) {
         return users.keySet()
                 .stream()
-                .filter(user -> user.getPassport().equals(passport))
+                .filter(user -> Objects.equals(user.getPassport(), passport))
                 .findFirst()
                 .orElse(null);
     }
@@ -21,7 +22,8 @@ public record BankService(Map<User, List<Account>> users) {
         }
         return users.get(user)
                 .stream()
-                .filter(account -> account.getRequisite().equals(requisite))
+                .filter(account -> account != null)
+                .filter(account -> Objects.equals(account.getRequisite(), requisite))
                 .findFirst()
                 .orElse(null);
     }
