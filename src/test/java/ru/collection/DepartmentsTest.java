@@ -2,6 +2,7 @@ package ru.collection;
 
 import org.junit.jupiter.api.Test;
 import java.util.List;
+import java.util.ArrayList;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class DepartmentsTest {
@@ -44,7 +45,7 @@ class DepartmentsTest {
 
     @Test
     void whenSortAscWithoutMissedDepartments() {
-        List<String> input = List.of(
+        List<String> input = new ArrayList<>(List.of(
                 "K1/SK1",
                 "K1/SK1/SSK1",
                 "K1/SK1/SSK2",
@@ -54,7 +55,7 @@ class DepartmentsTest {
                 "K1",
                 "K2/SK1/SSK2",
                 "K2/SK1/SSK1"
-        );
+        ));
         List<String> expected = List.of(
                 "K1",
                 "K1/SK1",
@@ -72,14 +73,14 @@ class DepartmentsTest {
 
     @Test
     void whenSortAscWithMissedDepartments() {
-        List<String> input = List.of(
+        List<String> input = new ArrayList<>(List.of(
                 "K1/SK1/SSK1",
                 "K1/SK1/SSK2",
                 "K2/SK1",
                 "K1/SK2",
                 "K2/SK1/SSK2",
                 "K2/SK1/SSK1"
-        );
+        ));
         List<String> expected = List.of(
                 "K1/SK1/SSK1",
                 "K1/SK1/SSK2",
@@ -94,7 +95,7 @@ class DepartmentsTest {
 
     @Test
     void whenSortDescWithoutMissedDepartments() {
-        List<String> input = List.of(
+        List<String> input = new ArrayList<>(List.of(
                 "K1/SK1",
                 "K1/SK1/SSK1",
                 "K1/SK1/SSK2",
@@ -104,7 +105,7 @@ class DepartmentsTest {
                 "K1",
                 "K2/SK1/SSK2",
                 "K2/SK1/SSK1"
-        );
+        ));
         List<String> expected = List.of(
                 "K2",
                 "K2/SK1",
@@ -122,7 +123,7 @@ class DepartmentsTest {
 
     @Test
     void whenSortDescWithMissedDepartments() {
-        List<String> input = List.of(
+        List<String> input = new ArrayList<>(List.of(
                 "K1/SK1",
                 "K1/SK1/SSK1",
                 "K1/SK1/SSK2",
@@ -130,7 +131,7 @@ class DepartmentsTest {
                 "K1/SK2",
                 "K2/SK1/SSK2",
                 "K2/SK1/SSK1"
-        );
+        ));
         List<String> expected = List.of(
                 "K2/SK1",
                 "K2/SK1/SSK1",
