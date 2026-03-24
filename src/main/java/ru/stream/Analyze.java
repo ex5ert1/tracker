@@ -40,7 +40,7 @@ public class Analyze {
                 .collect(Collectors.toList());
     }
 
-public static Tuple bestStudent(Stream<Pupil> stream) {
+    public static Tuple bestStudent(Stream<Pupil> stream) {
         return stream
                 .map(pupil -> {
                     int totalScore = pupil.subjects()
